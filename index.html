@@ -3,1101 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#123b4a">
-<title>Recorriendo el Aula | Juego de la Oca Pedagógico</title>
-<!-- Ícono de la pestaña del navegador -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Mirar más allá | Reflexión docente</title>
 <style>
-:root{--primario:#123b4a;--primario2:#1d6070;--fondo:#eef3f6;--blanco:#fff;--texto:#24323a;--muted:#62727b;--borde:#d8e1e6;--verde:#287a60;--azul:#247da0;--amarillo:#e8b541;--naranja:#cf704b;--violeta:#79558c;--rojo:#bd514d;--sombra:0 12px 32px rgba(18,59,74,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:clamp(10px,3vw,28px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;background:linear-gradient(135deg,#edf3f6,#f8fafb);color:var(--texto)}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #e8b541;outline-offset:3px}button:disabled{opacity:.55;cursor:not-allowed}.container{max-width:1180px;margin:auto;background:white;border:1px solid #e1e8ec;border-radius:22px;padding:clamp(16px,3vw,34px);box-shadow:var(--sombra)}header{position:relative;text-align:center;padding:18px 60px 25px;border-bottom:1px solid var(--borde);margin-bottom:24px}.eyebrow{display:inline-block;padding:5px 12px;border-radius:999px;background:#e3eff2;color:var(--primario);font-size:.78rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}h1{font-size:clamp(1.65rem,4vw,2.55rem);line-height:1.15;color:var(--primario);margin:12px 0 8px;letter-spacing:-.035em}.subtitulo-header{margin:0 auto;color:var(--muted);max-width:760px}.lema{font-size:.92rem;font-weight:700;color:var(--primario2);margin:10px 0 0}.menu-desplegable{position:absolute;right:0;top:0;z-index:20}.btn-hamburguesa,.btn{border:0;border-radius:11px;padding:10px 15px;font-weight:750;transition:transform .15s,background .15s}.btn-hamburguesa{background:#f4c84b;color:#263238}.btn-hamburguesa:hover,.btn:hover{transform:translateY(-1px)}.opciones-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);width:min(300px,85vw);background:white;border:1px solid var(--borde);border-radius:14px;box-shadow:0 12px 28px #152d3b25;overflow:hidden}.opciones-menu.show{display:flex;flex-direction:column}.btn-menu{border:0;border-bottom:1px solid #edf0f2;text-align:left;padding:13px 15px;background:white;color:var(--texto);font-weight:700}.btn-menu:hover,.btn-menu.activo{background:#eaf2f4;color:var(--primario)}.btn-menu.activo{box-shadow:inset 4px 0 var(--primario2)}.seccion-contenido{display:none;animation:aparecer .25s ease}.seccion-contenido.activa{display:block}@keyframes aparecer{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}.section-title{font-size:1.45rem;color:var(--primario);margin:0 0 15px}.bloque-informativo,.panel{background:#fbfcfd;border:1px solid var(--borde);border-radius:16px;padding:clamp(16px,2.5vw,24px);margin-bottom:16px}.bloque-informativo{border-left:5px solid var(--primario2)}#sec-contexto .bloque-informativo{border-left-color:var(--verde)}#sec-etapas .bloque-informativo{border-left-color:var(--amarillo)}#sec-estructura .bloque-informativo{border-left-color:var(--naranja)}#sec-fundamentacion .bloque-informativo{border-left-color:var(--violeta)}#sec-editor .bloque-informativo{border-left-color:var(--azul)}.bloque-informativo h3{margin:0 0 8px;color:var(--primario);font-size:1.1rem}.bloque-informativo p:last-child{margin-bottom:0}.bloque-informativo ul{padding-left:22px}.grid-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.mini-card{border:1px solid var(--borde);border-radius:14px;padding:16px;background:white}.mini-card strong{display:block;color:var(--primario);margin-bottom:4px}.header-juego{text-align:center;margin-bottom:18px}.titulo-juego{color:var(--primario);font-size:clamp(1.4rem,3vw,2rem);margin:0}.instrucciones-juego{color:var(--muted);margin:8px auto;max-width:760px}.controles-juego{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;padding:16px;background:#f5f8fa;border:1px solid var(--borde);border-radius:16px;margin:18px auto;max-width:900px}.progreso-texto{font-weight:800}.progreso-texto span{color:var(--primario2);font-size:1.15rem}.btn-dado{background:var(--primario2);color:white;min-width:155px}.btn-dado:hover{background:var(--primario)}.btn-reiniciar{background:#fbe9e7;color:#8e2d29}.btn-secundario{background:#e7eef1;color:var(--primario)}.leyenda{display:flex;justify-content:center;gap:8px 14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin:12px auto}.leyenda span{display:flex;align-items:center;gap:5px}.punto{width:10px;height:10px;border-radius:3px;display:inline-block}.jugadores{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;max-width:900px;margin:15px auto}.jugador-card{border:1px solid var(--borde);border-radius:12px;padding:12px;background:white}.jugador-card.turno{border:2px solid var(--primario2);background:#edf6f7}.jugador-nombre{font-weight:800;display:flex;align-items:center;gap:7px}.punto-ficha{width:13px;height:13px;border-radius:50%;display:inline-block;flex-shrink:0}.jugador-meta{font-size:.83rem;color:var(--muted)}.estado-juego{max-width:850px;margin:12px auto;padding:12px 15px;border-radius:12px;background:#edf6f7;color:var(--primario);font-weight:650}.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:#10232bd9;backdrop-filter:blur(4px);padding:16px;align-items:center;justify-content:center}.modal-overlay.active{display:flex}.modal-content{width:min(520px,100%);max-height:90vh;overflow:auto;background:white;border-radius:20px;padding:25px;box-shadow:0 20px 70px #0005;position:relative}.close-btn{position:absolute;right:15px;top:10px;border:0;background:transparent;color:#62727b;font-size:30px;line-height:1}.modal-title{margin:0 35px 12px 0;color:var(--primario);padding-bottom:12px;border-bottom:3px solid var(--borde);font-size:1.2rem}.modal-text{color:#44545d}.modal-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.respuesta-orientativa{display:none;margin-top:12px;padding:12px;background:#eef6f1;border-radius:10px;border-left:4px solid var(--verde)}.respuesta-orientativa.visible{display:block}.campo{display:flex;flex-direction:column;gap:5px;margin:10px 0}.campo label{font-weight:750;font-size:.9rem}.campo input,.campo select,.campo textarea{width:100%;border:1px solid #cbd7dd;border-radius:9px;padding:10px;background:white;color:var(--texto)}.campo textarea{min-height:95px;resize:vertical}.pie{margin-top:25px;padding-top:16px;border-top:1px solid var(--borde);text-align:center;color:var(--muted);font-size:.82rem}.oculto{display:none!important}.resumen{white-space:pre-wrap;background:#f5f8fa;border:1px solid var(--borde);border-radius:12px;padding:14px}
-.estrellas-selector{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#fff8e6;border:1px solid #f1dda6;border-radius:10px;margin:10px 0;flex-wrap:wrap}
-.estrellas-botones{display:flex;gap:2px}
-.estrella-btn{border:0;background:transparent;font-size:1.55rem;padding:0 3px;cursor:pointer;opacity:.28;transition:opacity .15s,transform .15s;line-height:1;color:#e8b541}
-.estrella-btn.activa{opacity:1}
-.estrella-btn:hover,.estrella-btn:focus-visible{transform:scale(1.18);opacity:.85}
-.estrellas-label{font-weight:700;font-size:.88rem;color:#7a5b00;margin-left:auto}
-.editor-item{display:flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid var(--borde);border-radius:10px;background:white}
-.editor-item .ed-num{font-weight:800;color:var(--primario);min-width:2em;text-align:center}
-.editor-item .ed-swatch{width:22px;height:22px;border-radius:6px;border:1px solid #0002;flex-shrink:0}
-.editor-item .ed-info{flex:1;min-width:0}
-.editor-item .ed-info strong{display:block;color:var(--primario);font-size:.95rem}
-.editor-item .ed-info small{color:var(--muted);font-size:.8rem;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.editor-item .ed-acciones{display:flex;gap:6px;flex-shrink:0}
-.editor-item .ed-acciones button{border:0;background:#e7eef1;color:var(--primario);padding:7px 11px;border-radius:8px;font-weight:700;font-size:.85rem;cursor:pointer;transition:transform .15s}
-.editor-item .ed-acciones button:hover{transform:translateY(-1px)}
-.editor-item .ed-acciones .del{background:#fbe9e7;color:#8e2d29}
-.editor-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}
-.badge-tipo{display:inline-block;font-size:.7rem;background:#e7eef1;color:var(--primario);padding:1px 7px;border-radius:5px;margin-left:6px;font-weight:700;text-transform:uppercase}
-.hint-jugadores{color:var(--primario2);font-size:.85rem;margin-top:4px;font-weight:600;min-height:1.3em}
-
-/* ====== TABLERO CURVO ====== */
-.tablero-curvo{position:relative;width:100%;max-width:750px;margin:20px auto;background:linear-gradient(135deg,#f5f8fa 0%,#e6eff2 100%);border-radius:24px;padding:22px;box-shadow:inset 0 2px 8px rgba(18,59,74,.08),0 8px 24px rgba(18,59,74,.06);border:1px solid var(--borde)}
-.camino-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
-.casilla-c{position:absolute;transform:translate(-50%,-50%);aspect-ratio:1/1;width:calc((100% / var(--cols,5)) * 0.72);min-width:50px;max-width:110px;border:3px solid #fff;border-radius:50%;padding:4px 3px;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;text-align:center;cursor:pointer;z-index:2;box-shadow:0 3px 10px rgba(0,0,0,.18);transition:transform .18s ease,box-shadow .18s ease;font-weight:700;line-height:1}
-.casilla-c:hover{transform:translate(-50%,-50%) scale(1.09);box-shadow:0 6px 18px rgba(0,0,0,.24);z-index:6}
-.casilla-c.actual{box-shadow:0 0 0 4px #f4c84b,0 3px 10px rgba(0,0,0,.18);z-index:3}
-.casilla-c.pisando{animation:pisando .45s ease;z-index:7}
-@keyframes pisando{0%{transform:translate(-50%,-50%) scale(1)}35%{transform:translate(-50%,-50%) scale(1.28);box-shadow:0 0 28px rgba(244,200,75,1),0 0 0 6px rgba(244,200,75,.5)}100%{transform:translate(-50%,-50%) scale(1)}}
-.casilla-c .numero{font-size:.85rem;font-weight:900;opacity:.95;line-height:1}
-.casilla-c .icono{font-size:1.05rem;line-height:1}
-.casilla-c .etiqueta{font-size:.55rem;font-weight:700;line-height:1.1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:100%;opacity:.95}
-.casilla-c .fichas{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);display:flex;gap:2px;flex-wrap:wrap;justify-content:center;min-width:20px;pointer-events:none}
-.ficha{width:13px;height:13px;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.35);animation:ficha-pop .3s ease}
-@keyframes ficha-pop{from{transform:scale(0)}60%{transform:scale(1.15)}to{transform:scale(1)}}
-
-@media(max-width:650px){body{padding:8px}.container{padding:14px;border-radius:15px}header{padding:54px 4px 20px}.menu-desplegable{top:0;right:0}.btn-hamburguesa{font-size:.85rem;padding:8px 10px}h1{font-size:1.7rem}.controles-juego{flex-direction:column}.controles-juego .btn{width:100%}.modal-content{padding:22px 18px}.editor-item{flex-wrap:wrap}.editor-item .ed-acciones{width:100%;justify-content:flex-end}.tablero-curvo{padding:12px;border-radius:16px}.casilla-c{min-width:42px;border-width:2px}.casilla-c .numero{font-size:.72rem}.casilla-c .icono{font-size:.9rem}.casilla-c .etiqueta{font-size:.48rem}.ficha{width:10px;height:10px;border-width:1.5px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
-
-/* ====== MEJORA VISUAL CON FOTOGRAFÍAS EDUCATIVAS ====== */
-.visual-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:stretch;margin:0 0 26px;overflow:hidden;border-radius:20px;background:#123b4a;color:#fff;box-shadow:var(--sombra)}
-.visual-intro-copy{padding:clamp(22px,4vw,38px);display:flex;flex-direction:column;justify-content:center}
-.visual-intro-copy .visual-kicker{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#f4c84b}
-.visual-intro-copy h2{font-size:clamp(1.4rem,3vw,2.15rem);line-height:1.18;margin:9px 0 12px;color:#fff}
-.visual-intro-copy p{margin:0;color:#e3edf0;max-width:620px}
-.visual-intro-image{min-height:250px;position:relative;background:#dce7ea}
-.visual-intro-image img{display:block;width:100%;height:100%;min-height:250px;object-fit:cover}
-.visual-intro-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,59,74,.28),transparent 60%)}
-.foto-bloque{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:18px 0 22px}
-.foto-card{overflow:hidden;border:1px solid var(--borde);border-radius:15px;background:#fff;box-shadow:0 5px 16px rgba(18,59,74,.06);transition:transform .2s,box-shadow .2s}
-.foto-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(18,59,74,.12)}
-.foto-card img{width:100%;height:165px;display:block;object-fit:cover;background:#e7eef1}
-.foto-card div{padding:13px 15px 16px}
-.foto-card strong{display:block;color:var(--primario);margin-bottom:4px}
-.foto-card p{font-size:.9rem;color:var(--muted);margin:0}
-.foto-pie{font-size:.76rem;color:var(--muted);margin:-10px 0 20px}
-.etapa-visual{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center}
-.etapa-visual img{width:100%;height:125px;object-fit:cover;border-radius:12px}
-@media(max-width:720px){.visual-intro{grid-template-columns:1fr}.visual-intro-image{order:-1;min-height:190px}.visual-intro-image img{min-height:190px;max-height:240px}.foto-bloque{grid-template-columns:1fr}.foto-card img{height:190px}.etapa-visual{grid-template-columns:1fr}.etapa-visual img{height:180px}}
-
-
-/* ===== REDISEÑO: COLORES VIVOS Y ESTÉTICA CÁLIDA/HUMANA ===== */
-:root{--primario:#173b68;--primario2:#087e8b;--fondo:#fff8ee;--blanco:#fff;--texto:#29364a;--muted:#586b7e;--borde:#f0d9c8;--verde:#168a68;--azul:#168aad;--amarillo:#ffbf3f;--naranja:#f07845;--violeta:#845ec2;--rojo:#ef476f;--sombra:0 16px 38px rgba(40,53,90,.13)}
-body{background:linear-gradient(135deg,rgba(255,242,218,.88),rgba(221,248,246,.9)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=2000&q=80') center/cover fixed;color:var(--texto)}
-.container{background:rgba(255,255,255,.96);border:2px solid rgba(255,255,255,.85);border-radius:28px;box-shadow:0 22px 60px rgba(32,61,88,.18)}
-header{border:0;border-radius:24px;margin-bottom:22px;padding:34px 70px 32px;background:linear-gradient(115deg,rgba(18,166,181,.93),rgba(38,116,190,.88)),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=85') center 42%/cover;color:#fff;overflow:visible}
-header:before{content:'✦';position:absolute;left:20px;top:15px;color:#ffe066;font-size:2.1rem;transform:rotate(-12deg)}
-header:after{content:'✿';position:absolute;left:30px;bottom:12px;color:#ff8fab;font-size:2.1rem;transform:rotate(15deg)}
-.eyebrow{background:#fff1c2;color:#654700;letter-spacing:.04em}h1{color:white;text-shadow:0 3px 15px rgba(20,42,73,.24);font-size:clamp(2rem,4.6vw,3.1rem)}.subtitulo-header{color:#f5fdff}.lema{color:#fff4c7}
-.btn-hamburguesa{background:#ffcf56;color:#26344c;border-radius:999px;box-shadow:0 5px 0 #e9a92e}.opciones-menu{border:2px solid #fff0c7}.btn-menu:hover,.btn-menu.activo{background:#e3f8f4;color:#087e8b;box-shadow:inset 4px 0 #ffbf3f}
-.visual-intro{background:linear-gradient(130deg,#087e8b 0%,#147db1 55%,#5b5bd6 100%);border-radius:28px;box-shadow:0 14px 32px rgba(19,115,157,.2);position:relative}
-.visual-intro:before{content:'✦  ✧';position:absolute;top:10px;left:18px;color:#ffdf70;font-size:1.5rem;letter-spacing:12px;pointer-events:none}.visual-intro-copy .visual-kicker{color:#ffe17a}.visual-intro-copy h2{font-size:clamp(1.55rem,3.2vw,2.35rem)}.visual-intro-image img{filter:saturate(1.18) contrast(1.02)}
-.section-title{color:#173b68;font-size:clamp(1.4rem,3vw,1.8rem);letter-spacing:-.025em}.bloque-informativo,.panel{background:linear-gradient(135deg,#fffdf8,#f4fbff);border:1px solid #f0dfd0;border-radius:20px;box-shadow:0 7px 20px rgba(49,77,99,.06)}.bloque-informativo{border-left:7px solid #ffbf3f!important}.bloque-informativo h3{color:#173b68}
-.foto-card{border:0;border-radius:20px;background:#fff;box-shadow:0 10px 24px rgba(41,65,88,.12)}.foto-card:nth-child(1){background:linear-gradient(180deg,#fff,#effcf5)}.foto-card:nth-child(2){background:linear-gradient(180deg,#fff,#fff7e7)}.foto-card:nth-child(3){background:linear-gradient(180deg,#fff,#f1f5ff)}.foto-card img{height:185px;filter:saturate(1.15)}.foto-card strong{font-size:1.03rem;color:#173b68}.foto-card div{padding:15px 17px 18px}.foto-card p{line-height:1.55}
-.mini-card{border:1px solid #f4ddbb;border-radius:18px;background:linear-gradient(145deg,#fff,#fff9ed);box-shadow:0 7px 18px rgba(55,73,95,.07);transition:transform .2s,box-shadow .2s}.mini-card:nth-child(3n+1){border-top:5px solid #18a77b}.mini-card:nth-child(3n+2){border-top:5px solid #ffbf3f}.mini-card:nth-child(3n){border-top:5px solid #ef476f}.mini-card:hover{transform:translateY(-4px) rotate(-.3deg);box-shadow:0 12px 24px rgba(55,73,95,.12)}
-.controles-juego{background:linear-gradient(120deg,#e3f8f4,#fff5d9);border:1px solid #c7e9e7;border-radius:20px}.btn-dado{background:linear-gradient(135deg,#087e8b,#1769aa);border-radius:999px;box-shadow:0 5px 0 #07566b}.btn-dado:hover{background:linear-gradient(135deg,#1769aa,#5b5bd6)}.btn-secundario{background:#e6f1ff;color:#194b82}.estado-juego{background:linear-gradient(100deg,#e1faf2,#e7f4ff);border:1px solid #c4e8e6;border-radius:15px}
-.tablero-curvo{background:radial-gradient(circle at 15% 20%,#fff1bd 0 9%,transparent 10%),radial-gradient(circle at 85% 80%,#d5f7ee 0 12%,transparent 13%),linear-gradient(135deg,#fff7df,#e1f7f8 52%,#f1e7ff);border:2px solid white;box-shadow:0 12px 30px rgba(34,77,100,.12)}
-.jugador-card{border-radius:16px;background:#fffdf7;border-color:#eadccf}.jugador-card.turno{border:2px solid #ffbf3f;background:#fff7d9;box-shadow:0 0 0 4px #ffbf3f33}.modal-content{border-radius:24px;border:3px solid #fff0c7}.modal-title{border-color:#ffbf3f}.pie{border-color:#f0d9c8}
-@media(max-width:650px){header{padding:62px 15px 25px;border-radius:20px}header:before{left:12px}header:after{left:auto;right:12px}.visual-intro{border-radius:20px}.foto-card img{height:205px}body{background-attachment:scroll}}
-
-
-/* ===== Portada visual cálida y humana ===== */
-:root{--primario:#12345a;--primario2:#087f9f;--fondo:#f1fbff;--verde:#079669;--azul:#087fbd;--amarillo:#ffb51b;--naranja:#ff744d;--violeta:#8050c9;--rojo:#f04f68;--sombra:0 14px 35px rgba(19,65,95,.14)}
-body{padding:0;background:#e9faff;color:#193450;background-image:radial-gradient(circle at 7% 12%,#ffce3a 0 80px,transparent 82px),radial-gradient(circle at 96% 20%,#ff6487 0 90px,transparent 92px),radial-gradient(circle at 4% 68%,#19c7c9 0 75px,transparent 77px),linear-gradient(135deg,#effcff,#fff8e8 55%,#eefaff)}
-.container{max-width:1500px;padding:0 0 28px;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:hidden}
-header{min-height:340px;margin:0 0 20px;padding:46px clamp(20px,5vw,70px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;border:0;border-radius:0 0 34px 34px;background:linear-gradient(100deg,rgba(0,190,199,.88),rgba(255,199,44,.30)),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2000&q=85') center 42%/cover;position:relative;isolation:isolate}
-header:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,188,199,.94) 0%,rgba(255,255,255,.88) 46%,rgba(255,191,44,.08) 100%);z-index:-1}
-header .eyebrow{background:#fff;color:#087f9f;text-transform:none;letter-spacing:0;font-size:.9rem}
-header h1{font-size:clamp(2.5rem,6vw,5.2rem);max-width:780px;background:#fff;color:#102f54;border-radius:30px;padding:14px 26px;margin:15px 0 8px;box-shadow:0 10px 30px #123b4a18;letter-spacing:-.045em}
-.subtitulo-header{margin:0;max-width:740px;background:#d9f3ff;color:#173b5c;border-radius:999px;padding:10px 20px;font-size:clamp(1rem,2vw,1.3rem);font-weight:750}
-.lema{font-size:1.05rem;color:#173b5c;margin-top:12px;background:#fff9;padding:8px 15px;border-radius:14px}
-.menu-desplegable{top:18px;right:clamp(18px,3vw,42px)}.btn-hamburguesa{background:#ffca35;color:#173454;border-radius:999px;padding:13px 22px;font-size:1rem;box-shadow:0 5px 15px #0002}
-.opciones-menu{border:0;border-radius:18px;padding:7px}.btn-menu{border-radius:10px;margin:2px 0;border:0;padding:13px 15px}.btn-menu.activo,.btn-menu:hover{background:#dff4ff;box-shadow:none}
-.home-dashboard{padding:0 clamp(14px,3vw,44px);animation:aparecer .35s ease}
-.home-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin:0 0 22px}
-.home-card{overflow:hidden;background:#fff;border-radius:19px;border:1px solid #dbeaf0;box-shadow:0 8px 20px #16466318;display:flex;flex-direction:column;min-width:0;transition:transform .2s,box-shadow .2s}
-.home-card:hover{transform:translateY(-5px) rotate(-.25deg);box-shadow:0 15px 30px #16466325}
-.home-card img{display:block;width:100%;height:155px;object-fit:cover}
-.home-card-body{padding:16px 17px 17px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
-.home-card h3{margin:0 0 5px;color:#12345a;font-size:1.15rem;line-height:1.2}.home-card p{margin:0 0 15px;color:#40566b;line-height:1.4;flex:1}
-.home-card .btn{width:100%;text-align:center;border-radius:13px;color:#fff;padding:11px 13px}.home-card:nth-child(1) .btn{background:#079669}.home-card:nth-child(2) .btn{background:#ffb51b;color:#183450}.home-card:nth-child(3) .btn{background:#087fbd}.home-card:nth-child(4) .btn{background:#8050c9}.home-card:nth-child(5) .btn{background:#f04f68}
-.game-banner{display:grid;grid-template-columns:minmax(220px, .95fr) minmax(300px,1.35fr) minmax(190px,.75fr);gap:24px;align-items:center;padding:22px;border-radius:24px;background:linear-gradient(115deg,#9eeff0,#f3fcff 55%,#fff0bf);box-shadow:0 8px 22px #16466316;overflow:hidden}
-.game-banner img{width:100%;height:205px;object-fit:cover;border-radius:18px;box-shadow:0 8px 20px #123b4a20}
-.game-copy{text-align:center}.game-copy .pill{display:inline-block;background:#c7efff;color:#12446b;border-radius:999px;padding:4px 14px;font-weight:850;font-size:.8rem}.game-copy h2{font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.12;margin:8px 0;color:#12345a}.game-copy p{margin:0 auto 16px;color:#36546b;max-width:560px}.game-copy .btn{background:#075e82;color:#fff;border-radius:999px;padding:13px 28px;font-size:1.05rem}
-.game-benefits{background:#ffffffd9;border:1px solid #d3eef5;border-radius:20px;padding:18px;transform:rotate(1deg);list-style:none;margin:0}.game-benefits li{padding:6px 0;color:#193d5b}.game-benefits li:before{content:'✓';display:inline-grid;place-items:center;margin-right:9px;width:24px;height:24px;border-radius:50%;background:#0b9b75;color:white;font-weight:900}
-.seccion-contenido{margin:0 clamp(14px,3vw,44px);padding:clamp(18px,3vw,34px);background:#ffffffed;border-radius:24px;border:1px solid #dcecf2;box-shadow:0 8px 24px #16466312}
-.section-title{font-size:clamp(1.5rem,3vw,2.2rem)}.bloque-informativo,.panel{background:#fff;border-radius:19px;box-shadow:0 5px 15px #1646630b}.mini-card{border-radius:17px;box-shadow:0 4px 13px #1646630b}
-.tablero-curvo{background:linear-gradient(135deg,#fff2b8,#c8f7f1 50%,#e3f2ff);border:2px solid #fff}
-@media(max-width:1050px){.home-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.game-banner{grid-template-columns:1fr 1.4fr}.game-benefits{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:0 12px}}
-@media(max-width:650px){header{min-height:400px;padding:75px 18px 25px;border-radius:0 0 24px 24px}.menu-desplegable{top:12px;right:12px}header h1{font-size:2.3rem;padding:12px 15px;border-radius:20px}.subtitulo-header{border-radius:16px}.home-cards{grid-template-columns:1fr 1fr;gap:10px}.home-card img{height:115px}.home-card-body{padding:12px}.home-card h3{font-size:1rem}.home-card p{font-size:.9rem}.game-banner{grid-template-columns:1fr;padding:15px;gap:14px}.game-banner img{height:175px}.game-benefits{display:block;transform:none}.seccion-contenido{margin:0 10px;padding:15px}}
-@media(max-width:390px){.home-cards{grid-template-columns:1fr}.home-card img{height:160px}}
-
+:root{--ink:#20312e;--muted:#586b66;--cream:#fbf7ef;--green:#24594e;--mint:#dceee5;--orange:#ef9b62;--pink:#f4d9cf;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+button{font:inherit;cursor:pointer}
+.hero{min-height:92vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:3rem;padding:clamp(2rem,7vw,6rem);background:radial-gradient(circle at 85% 15%,#f6d7b8 0 10%,transparent 28%),linear-gradient(135deg,#f7f0e4,#e4f0e7)}
+.kicker{display:inline-block;color:var(--green);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.98;letter-spacing:-.06em;margin:.7rem 0 1.3rem;max-width:750px}
+.hero p{font-size:1.15rem;max-width:600px;color:#40554f}
+.hero-art{min-height:400px;position:relative;display:grid;place-items:center}
+.blob{width:min(78%,430px);aspect-ratio:1;border-radius:46% 54% 58% 42%/42% 43% 57% 58%;background:linear-gradient(145deg,#8dbba4,#3d7566);position:relative;animation:float 6s ease-in-out infinite;box-shadow:0 30px 70px #24594e22}
+.blob:before,.blob:after{content:"";position:absolute;border-radius:50%;background:#f7c08d}
+.blob:before{width:33%;height:33%;left:15%;top:17%}
+.blob:after{width:24%;height:24%;right:13%;bottom:18%;background:#f4d9cf}
+.quote-card{position:absolute;background:#fffdf8;padding:1.2rem 1.4rem;border-radius:20px;box-shadow:0 18px 45px #20312e18;max-width:250px;font-weight:700}
+.quote-card.one{left:0;top:18%}.quote-card.two{right:0;bottom:12%;font-weight:500}
+@keyframes float{50%{transform:translateY(-12px) rotate(2deg)}}
+nav{position:sticky;top:0;z-index:5;background:#fbf7efed;backdrop-filter:blur(12px);border-bottom:1px solid #dfe7df;display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;padding:.7rem}
+nav a{color:var(--ink);text-decoration:none;font-size:.9rem;font-weight:700;padding:.55rem .8rem;border-radius:999px}
+nav a:hover{background:var(--mint)}
+main{max-width:1100px;margin:auto;padding:2rem 1.3rem 5rem}
+section{padding:4.5rem 0;scroll-margin-top:90px}
+.section-head{max-width:720px;margin-bottom:2rem}
+h2{font-size:clamp(2rem,4vw,3.5rem);line-height:1.08;letter-spacing:-.04em;margin:.5rem 0 1rem}
+.lead{font-size:1.12rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+.card{background:var(--white);border:1px solid #e5e8df;border-radius:24px;padding:1.5rem;box-shadow:0 10px 35px #20312e08}
+.card h3{margin:.1rem 0 .6rem;font-size:1.35rem}
+.tag{display:inline-block;border-radius:999px;padding:.3rem .65rem;background:var(--mint);color:var(--green);font-size:.76rem;font-weight:800;margin-bottom:.7rem}
+.card.albert{background:#f9e9dd}.card.jaime{background:#e6f0ea}
+.prompt{margin-top:1.2rem;padding:1.2rem;border-radius:18px;background:#f4f0e7}
+.reveal{display:none;margin-top:.8rem;border-left:4px solid var(--green);padding:.8rem 1rem;background:#fff;border-radius:0 12px 12px 0}
+.reveal.show{display:block;animation:appear .25s ease}
+.btn{border:0;border-radius:999px;padding:.75rem 1.1rem;background:var(--green);color:white;font-weight:800;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:#173f37}
+.btn.secondary{background:#e2eee7;color:var(--green)}
+@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.pillar{border-radius:22px;padding:1.4rem;background:var(--mint)}
+.pillar:nth-child(2){background:#f8e2d2}.pillar:nth-child(3){background:#e7e3f4}
+.number{font-size:2.2rem;font-weight:900;opacity:.45}
+.timeline{border-left:2px solid #9bbcac;margin-left:.7rem;padding-left:1.5rem}
+.timeline article{position:relative;margin:0 0 1.5rem}
+.timeline article:before{content:"";position:absolute;left:-1.98rem;top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--orange);border:3px solid var(--cream)}
+.question{margin:1rem 0;padding:1.4rem;background:#fff;border:1px solid #e2e8df;border-radius:20px}
+.question p{font-weight:800;margin-top:0}
+.options{display:flex;gap:.65rem;flex-wrap:wrap}
+.options button{border:1px solid #b8cbc0;border-radius:999px;background:#fff;color:var(--ink);padding:.65rem .9rem}
+.options button:hover,.options button.selected{background:var(--green);color:white;border-color:var(--green)}
+.feedback{margin-top:.8rem;color:var(--green);font-weight:650;min-height:1.5rem}
+textarea{width:100%;min-height:130px;border:1px solid #bdcec4;border-radius:16px;padding:1rem;font:inherit;background:#fffdf9;color:var(--ink);resize:vertical}
+.reflection{background:var(--green);color:white;border-radius:30px;padding:clamp(1.5rem,5vw,3.5rem);position:relative;overflow:hidden}
+.reflection p{font-size:clamp(1.2rem,2.4vw,1.7rem);line-height:1.55;max-width:850px}
+.reflection .kicker{color:#cbe8d8}
+footer{text-align:center;padding:2rem;color:var(--muted);border-top:1px solid #dfe7df}
+.small{font-size:.9rem;color:var(--muted)}
+.progress{height:4px;background:#dce7df;position:fixed;top:0;left:0;width:100%;z-index:10}
+.progress span{display:block;height:100%;width:0;background:var(--orange)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:0;min-height:auto}.hero-art{min-height:310px}.quote-card.one{left:2%;top:10%}.quote-card.two{right:1%;bottom:8%}.grid,.pillars{grid-template-columns:1fr}.hero h1{font-size:clamp(3.2rem,16vw,5rem)}nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}nav a{white-space:nowrap}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="container">
-<header>
-  <div class="menu-desplegable">
-    <button class="btn-hamburguesa" id="btnMenu" aria-expanded="false" aria-controls="opcionesMenu">☰ Secciones</button>
-    <nav class="opciones-menu" id="opcionesMenu" aria-label="Navegación principal">
-      <button class="btn-menu activo" data-target="home-dashboard"> Inicio</button>
-      <button class="btn-menu" data-target="sec-contexto"> Contexto escolar</button>
-      <button class="btn-menu" data-target="sec-etapas"> Etapas del trabajo</button>
-      <button class="btn-menu" data-target="sec-estructura"> Estructura del juego</button>
-      <button class="btn-menu" data-target="sec-fundamentacion"> Fundamentación</button>
-      <button class="btn-menu" data-target="sec-juego"> Juego de la oca</button>
-      <button class="btn-menu" data-target="sec-editor"> Editor de tarjetas</button>
-    </nav>
+<div class="progress"><span id="progress"></span></div>
+<header class="hero" id="inicio">
+  <div>
+    <span class="kicker">Reflexión · Formación docente</span>
+    <h1>Mirar más allá.</h1>
+    <p>Desde mi futuro rol docente, mi postura frente a los alumnos debe ser comprensiva ante las dificultades que puedan presentarse durante su trayectoria escolar.</p>
+    <a href="#historias"><button class="btn">Comenzar el recorrido ↓</button></a>
   </div>
-  <span class="eyebrow">Proyecto pedagógico · Colegio Galileo Galilei N.º 3169</span>
-  <h1>Recorriendo el Aula</h1>
-  <p class="subtitulo-header">Guía para el trabajo de campo y elaboración del Juego de la Oca Pedagógico</p>
-  <p class="lema">Observar, preguntar, pensar y transformar la realidad escolar.</p>
+  <div class="hero-art" aria-label="Ilustración abstracta que representa diferentes perspectivas">
+    <div class="blob"></div>
+    <div class="quote-card one">Cada estudiante tiene una historia.</div>
+    <div class="quote-card two">Enseñar también es escuchar, comprender y acompañar.</div>
+  </div>
 </header>
-
-<section id="home-dashboard" class="home-dashboard" aria-label="Inicio del proyecto">
-  <div class="home-cards">
-    <article class="home-card"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=85" alt="Edificio escolar rodeado de árboles"><div class="home-card-body"><h3>Contexto escolar</h3><p>Conocemos la institución, sus actores y su realidad.</p><button class="btn" data-go="sec-contexto">Ver sección →</button></div></article>
-    <article class="home-card"><img src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&fit=crop&w=800&q=85" alt="Estudiantes trabajando con apuntes"><div class="home-card-body"><h3>Etapas del trabajo</h3><p>Observación, entrevistas, organización y análisis.</p><button class="btn" data-go="sec-etapas">Ver sección →</button></div></article>
-    <article class="home-card"><img src="https://images.unsplash.com/photo-1606503153255-59d8b8b821e8?auto=format&fit=crop&w=800&q=85" alt="Juego de mesa con fichas de colores y dado"><div class="home-card-body"><h3>Estructura del juego</h3><p>Conocé las reglas, casilleros y dinámica del juego.</p><button class="btn" data-go="sec-estructura">Ver sección →</button></div></article>
-    <article class="home-card"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=85" alt="Libros que representan el conocimiento y las ideas"><div class="home-card-body"><h3>Fundamentación</h3><p>Las ideas que dan sentido a esta propuesta.</p><button class="btn" data-go="sec-fundamentacion">Ver sección →</button></div></article>
-    <article class="home-card"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=85" alt="Persona trabajando en una computadora portátil"><div class="home-card-body"><h3>Editor de tarjetas</h3><p>Creá y personalizá tus propios desafíos.</p><button class="btn" data-go="sec-editor">Abrir editor →</button></div></article>
-  </div>
-  <div class="game-banner">
-    <img src="https://images.unsplash.com/photo-1606503153255-59d8b8b821e8?auto=format&fit=crop&w=1000&q=85" alt="Fichas y dado de un juego de mesa colorido">
-    <div class="game-copy"><span class="pill">¡A JUGAR!</span><h2>Juego de la Oca Pedagógico</h2><p>Respondé desafíos, reflexioná sobre la realidad escolar y avanzá junto a tus compañeros hacia la meta.</p><button class="btn" data-go="sec-juego">🎲 Iniciar juego</button></div>
-    <ul class="game-benefits"><li>Aprender jugando</li><li>Trabajar en equipo</li><li>Reflexionar sobre la escuela</li><li>Valorar la experiencia</li></ul>
+<nav aria-label="Navegación principal">
+  <a href="#historias">Albert y Jaime</a><a href="#tensiones">Tensiones</a><a href="#trayectorias">Trayectorias</a><a href="#actividad">Interactuá</a><a href="#reflexion">Mi reflexión</a>
+</nav>
+<main>
+<section id="historias">
+  <div class="section-head"><h2>Dos alumnos, dos realidades.</h2><p class="lead">Albert y Jaime tienen características diferentes. Sus historias nos ayudan a cuestionar una mirada que reduce al estudiante a su rendimiento o comportamiento.</p></div>
+  <div class="grid">
+    <article class="card albert"><h3>¿Solo un alumno inquieto?</h3><p>Albert tiene dificultades para adaptarse a las normas escolares y suele ser visto como un estudiante problemático. Sin embargo, demuestra afecto, empatía y una gran capacidad para acompañar a su amigo.</p><button class="btn secondary" onclick="toggleReveal('albert-extra',this)">Ver otra perspectiva +</button><div class="reveal" id="albert-extra">Además de observar lo que le cuesta, como futuro docente puedo reconocer sus fortalezas, comprender qué necesita y evitar que una conducta defina toda su identidad.</div></article>
+    <article class="card jaime"><h3>¿Solo un alumno brillante?</h3><p>Jaime disfruta aprender y tiene una gran capacidad intelectual, pero la presión por alcanzar resultados excelentes afecta profundamente su bienestar emocional.</p><button class="btn secondary" onclick="toggleReveal('jaime-extra',this)">Ver otra perspectiva +</button><div class="reveal" id="jaime-extra">Un buen rendimiento no garantiza que el estudiante esté bien. Es necesario escuchar sus emociones y no permitir que una nota sea más importante que su bienestar.</div></article>
   </div>
 </section>
-
-<section id="sec-contexto" class="seccion-contenido">
-  <h2 class="section-title">🌍 Contexto del trabajo de campo</h2>
-  <div class="bloque-informativo">
-    <h3>Aproximación a la realidad escolar</h3>
-    <p>Aproximación cualitativa y cuantitativa a instituciones de Nivel Secundario en General Güemes. Recopilación de información sobre gestión, enseñanza y dinámicas escolares.</p>
-    <ul><li><strong>Revisión documental:</strong> análisis del PEI y PCI.</li><li><strong>Observación participante:</strong> registro de dinámicas en el aula.</li><li><strong>Entrevistas:</strong> a directivos y docentes de la institución.</li></ul>
-    <p><strong>Objetivo final:</strong> sintetizar vivencias en un Juego de la Oca Pedagógico interactivo, articulando teoría con situaciones reales.</p>
-  </div>
-  <div class="foto-bloque" aria-label="Imágenes ilustrativas del trabajo de campo">
-    <article class="foto-card"><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80" alt="Estudiantes aprendiendo y compartiendo en un espacio educativo" loading="lazy"><div><strong>La vida en el aula</strong><p>Observar las interacciones, las actividades y las formas de participación.</p></div></article>
-    <article class="foto-card"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Estudiante trabajando con materiales escolares" loading="lazy"><div><strong>Las trayectorias escolares</strong><p>Reconocer experiencias, necesidades y distintas maneras de aprender.</p></div></article>
-    <article class="foto-card"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Personas utilizando computadoras para aprender y trabajar" loading="lazy"><div><strong>Educación e informática</strong><p>Explorar cómo los recursos digitales pueden acompañar la enseñanza.</p></div></article>
-  </div>
-  <p class="foto-pie">Fotografías ilustrativas obtenidas de Unsplash. No representan necesariamente a la institución visitada.</p>
-  <div class="grid-info">
-    <div class="mini-card"><strong>🔎 Indagar</strong>Recuperar información del contexto y de la vida institucional.</div>
-    <div class="mini-card"><strong>🗂️ Organizar</strong>Clasificar los datos por dimensiones para analizarlos.</div>
-    <div class="mini-card"><strong>💡 Transformar</strong>Convertir los hallazgos en preguntas y desafíos de reflexión.</div>
+<section id="tensiones">
+  <div class="section-head"><h2>Cuando las expectativas chocan.</h2><p class="lead">Las tensiones aparecen cuando las normas y exigencias escolares no contemplan las necesidades, los tiempos, las emociones o las formas de expresarse de los jóvenes.</p></div>
+  <div class="pillars">
+    <article class="pillar"><div class="number">01</div><h3>La mirada escolar</h3><p>Se centra en el cumplimiento, la disciplina, las actividades y las calificaciones.</p></article>
+    <article class="pillar"><div class="number">02</div><h3>La experiencia juvenil</h3><p>Incluye emociones, vínculos, intereses, identidad y distintas maneras de aprender y participar.</p></article>
+    <article class="pillar"><div class="number">03</div><h3>El desafío docente</h3><p>Construir un vínculo que sostenga las normas sin dejar de escuchar y comprender a cada estudiante.</p></article>
   </div>
 </section>
-
-<section id="sec-etapas" class="seccion-contenido">
-  <h2 class="section-title">🔄 Etapas del trabajo</h2>
-  <div class="bloque-informativo etapa-visual"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80" alt="Personas analizando información y tomando notas" loading="lazy"><div><h3>1. Indagar</h3><p>Recopilación de datos en las escuelas: lectura de documentos, observación en aula y entrevistas.</p></div></div>
-  <div class="bloque-informativo etapa-visual"><img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=500&q=80" alt="Cuaderno y materiales para organizar ideas" loading="lazy"><div><h3>2. Organizar</h3><p>Clasificación y jerarquización de la información en dimensiones clave: <strong>contexto, gestión, organización, trabajo docente, currículum y trayectorias.</strong></p></div></div>
-  <div class="bloque-informativo etapa-visual"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80" alt="Equipo colaborando para desarrollar ideas" loading="lazy"><div><h3>3. Transformar</h3><p>Conversión del material empírico en consignas pedagógicas, preguntas, desafíos y decisiones para el juego.</p></div></div>
-</section>
-
-<section id="sec-estructura" class="seccion-contenido">
-  <h2 class="section-title">🎲 Estructura y componentes del juego</h2>
-  <div class="bloque-informativo"><p><strong>Tablero:</strong> camino curvo en forma de serpiente, con casilleros circulares conectados por un sendero. Inicialmente 25 casilleros, editable.</p><p><strong>Casilleros especiales:</strong> Observaste (👁️), Preguntaste (💬), Pensaste (🧠), Decidís (📝), Avanza (⬆️) y Retrocede (⬇️).</p><p><strong>Tarjetas:</strong> categorías por color: Contexto, Gestión, Organización Escolar, Enseñanza, Informática y Reflexión Teórica.</p></div>
-  <div class="grid-info">
-    <div class="mini-card"><strong>🟢 Contexto escolar</strong>Institución, comunidad, PEI y PCI.</div><div class="mini-card"><strong>🔵 Gestión educativa</strong>Comunicación, convivencia y decisiones.</div><div class="mini-card"><strong>🟡 Organización</strong>Tiempos, espacios, roles y acuerdos.</div><div class="mini-card"><strong>🟠 Enseñanza</strong>Planificación, evaluación y diversidad.</div><div class="mini-card"><strong>🟣 Informática</strong>Recursos digitales y ciudadanía digital.</div><div class="mini-card"><strong>🔴 Reflexión teórica</strong>Articulación entre teoría y práctica.</div>
+<section id="trayectorias">
+  <div class="section-head"><h2>No todos recorren el mismo camino.</h2><p class="lead">Las trayectorias escolares son los recorridos que cada estudiante realiza durante su escolaridad. Pueden avanzar de manera sostenida o atravesar interrupciones y dificultades.</p></div>
+  <div class="timeline">
+    <article><h3>Trayectoria continua</h3><p>El estudiante avanza por los años escolares de manera sostenida y logra completar sus estudios.</p></article>
+    <article><h3>Trayectoria con interrupciones o dificultades</h3><p>Puede haber repitencia, ausencias prolongadas, pausas o dificultades para continuar. Estas situaciones no definen el valor ni el potencial de la persona.</p></article>
+    <article><h3>¿Qué puede hacer la escuela?</h3><p>Escuchar, identificar barreras, ofrecer acompañamiento y buscar alternativas para que cada estudiante pueda aprender y continuar su recorrido.</p></article>
   </div>
 </section>
-
-<section id="sec-fundamentacion" class="seccion-contenido">
-  <h2 class="section-title">📚 Fundamentación y cierre grupal</h2>
-  <div class="bloque-informativo"><h3>Fundamentación teórica</h3><p>Justifica las dimensiones seleccionadas, explica la transformación del dato en juego y cita autores que respalden la articulación entre teoría y práctica.</p><p><strong>Importante:</strong> los ejemplos de casilleros son disparadores editables; verificá los datos institucionales antes de presentarlos como resultados reales.</p></div>
-  <div class="bloque-informativo"><h3>Esquema de cierre grupal 3-2-1</h3><ul><li><strong>3 ideas clave:</strong> aprendizajes relevantes.</li><li><strong>2 situaciones:</strong> vinculación entre teoría y práctica.</li><li><strong>1 pregunta abierta:</strong> interrogante sobre la vida escolar.</li></ul><p><strong>Criterios de evaluación:</strong> articulación teoría-práctica, reflexión crítica, creatividad lúdica y trabajo colaborativo.</p><button class="btn btn-secundario" id="irCierre">✍️ Completar cierre 3-2-1</button></div>
+<section id="actividad">
+  <div class="section-head"><h2>Elegí cómo actuarías.</h2><p class="lead">Leé cada situación y seleccioná la respuesta que mejor represente una mirada docente comprensiva y responsable.</p></div>
+  <div class="question"><p>Situación 1. Un alumno interrumpe la clase y no termina las actividades. ¿Qué harías primero?</p><div class="options"><button onclick="answer(this,1,0)">Lo etiqueto como irresponsable.</button><button onclick="answer(this,1,1)">Converso con él e intento comprender qué ocurre.</button><button onclick="answer(this,1,0)">Lo comparo con sus compañeros.</button></div><div class="feedback" id="feedback1"></div></div>
+  <div class="question"><p>Situación 2. Una alumna obtiene buenas notas, pero muestra mucha angustia ante los exámenes. ¿Qué priorizarías?</p><div class="options"><button onclick="answer(this,2,1)">Escucharla y atender su bienestar, sin dejar de acompañar el aprendizaje.</button><button onclick="answer(this,2,0)">Decirle que no tiene motivos para sentirse así.</button><button onclick="answer(this,2,0)">Exigirle que mantenga siempre las mismas notas.</button></div><div class="feedback" id="feedback2"></div></div>
+  <div class="question"><p>Situación 3. Un estudiante interrumpió su escolaridad y quiere volver. ¿Qué actitud tomarías?</p><div class="options"><button onclick="answer(this,3,0)">Suponer que no va a poder.</button><button onclick="answer(this,3,1)">Escuchar su situación y buscar apoyos para favorecer su continuidad.</button><button onclick="answer(this,3,0)">Pedirle que resuelva solo todas sus dificultades.</button></div><div class="feedback" id="feedback3"></div></div>
+  <div class="prompt"><strong>Mi compromiso:</strong> completá la frase con tus propias palabras.</div>
+  <label for="commitment"><strong>Como futuro docente, me comprometo a…</strong></label>
+  <textarea id="commitment" placeholder="Escribí tu respuesta acá..."></textarea>
+  <p><button class="btn" onclick="saveReflection()">Guardar mi reflexión en esta página</button> <button class="btn secondary" onclick="window.print()">Imprimir / guardar como PDF</button></p>
+  <div class="feedback" id="saved"></div>
 </section>
-
-<section id="sec-juego" class="seccion-contenido">
-  <div class="header-juego"><h2 class="titulo-juego">¡Juega y descubre el informe!</h2><p class="instrucciones-juego">Lanzá el dado. Tu ficha avanzará casillero por casillero a lo largo del camino. Al llegar, leé la consigna, calificá tu respuesta y registrá el desafío.</p></div>
-  <div class="panel">
-    <div class="grid-info">
-      <div class="campo"><label for="modoJuego">Modalidad</label><select id="modoJuego"><option value="equipo">Partida por equipos</option><option value="individual">Exploración individual</option></select></div>
-      <div class="campo"><label for="cantidadJugadores">Cantidad de jugadores (2 a 6)</label><select id="cantidadJugadores"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
-    </div>
-    <div class="campo">
-      <label for="nombresJugadores">Nombres de los jugadores/equipos (uno por línea)</label>
-      <textarea id="nombresJugadores" placeholder="Equipo Rojo&#10;Equipo Azul&#10;Equipo Verde"></textarea>
-      <small id="jugadoresHint" class="hint-jugadores"></small>
-    </div>
-    <button class="btn btn-secundario" id="btnConfigurar">Aplicar jugadores / nueva partida</button>
-  </div>
-  <div class="controles-juego">
-    <div class="progreso-texto">Casillero: <span id="contador">1</span> / <span id="totalCasilleros">25</span></div>
-    <div class="progreso-texto">Turno: <span id="turnoTexto">Jugador 1</span></div>
-    <button class="btn btn-dado" id="btnDado">🎲 Tirar dado</button>
-    <button class="btn btn-secundario" id="btnContinuar" disabled>➡️ Continuar turno</button>
-    <button class="btn btn-reiniciar" id="btnReiniciar">🔄 Reiniciar</button>
-  </div>
-  <div class="estado-juego" id="estadoJuego" role="status" aria-live="polite">Configurá los jugadores y lanzá el dado para comenzar.</div>
-  <div class="jugadores" id="jugadoresPanel"></div>
-  <div class="leyenda"><span><i class="punto" style="background:var(--verde)"></i>Contexto</span><span><i class="punto" style="background:var(--azul)"></i>Gestión</span><span><i class="punto" style="background:var(--amarillo)"></i>Organización</span><span><i class="punto" style="background:var(--naranja)"></i>Enseñanza</span><span><i class="punto" style="background:var(--violeta)"></i>Informática</span><span><i class="punto" style="background:var(--rojo)"></i>Reflexión</span></div>
-  <div class="tablero-curvo" id="tablero" aria-label="Tablero de casilleros en camino curvo"></div>
-  <div class="panel"><h3>📊 Resumen de la partida</h3><p id="resumenPartida">Todavía no se registraron desafíos.</p><button class="btn btn-secundario" id="btnGuardar">💾 Guardar partida</button> <button class="btn btn-secundario" id="btnCargar">↩️ Recuperar partida</button></div>
-  <div class="panel" id="panelCierre"><h3>✍️ Cierre grupal 3-2-1</h3><div class="campo"><label for="ideas">3 ideas clave aprendidas</label><textarea id="ideas" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea></div><div class="campo"><label for="situaciones">2 situaciones que relacionen teoría y práctica</label><textarea id="situaciones" placeholder="1. ...&#10;2. ..."></textarea></div><div class="campo"><label for="preguntaFinal">1 pregunta abierta</label><textarea id="preguntaFinal" placeholder="¿Qué nos queda por comprender sobre la vida escolar?"></textarea></div><div class="campo"><label for="observaciones">Observaciones docentes (opcional)</label><textarea id="observaciones"></textarea></div><button class="btn btn-dado" id="btnGuardarCierre">Guardar reflexión</button> <button class="btn btn-secundario" id="btnImprimir">🖨️ Imprimir síntesis</button><p id="estadoCierre" role="status"></p></div>
-</section>
-
-<section id="sec-editor" class="seccion-contenido">
-  <h2 class="section-title">🛠️ Editor de tarjetas</h2>
-  <div class="bloque-informativo">
-    <h3>Personalizá el juego</h3>
-    <p>Editá, agregá o eliminá tarjetas del tablero. Los cambios se guardan automáticamente en este navegador y podés exportarlos como JSON para compartirlos con otros docentes o trasladarlos a otra computadora.</p>
-  </div>
-  <div class="panel">
-    <div class="editor-toolbar">
-      <button class="btn btn-dado" id="btnNuevaTarjeta">➕ Nueva tarjeta</button>
-      <button class="btn btn-secundario" id="btnExportar">💾 Exportar JSON</button>
-      <button class="btn btn-secundario" id="btnImportarTrigger">📂 Importar JSON</button>
-      <input type="file" id="inputImportar" accept=".json,application/json" hidden>
-      <button class="btn btn-reiniciar" id="btnRestaurar">🔄 Restaurar originales</button>
-    </div>
-    <p id="editorEstado" role="status" style="margin:0 0 12px;font-weight:700;color:var(--primario2);min-height:1.4em"></p>
-    <div id="editorLista" style="display:grid;gap:10px"></div>
-  </div>
-  <div class="panel" id="editorFormPanel" style="display:none">
-    <h3 id="editorFormTitulo">Editar tarjeta</h3>
-    <div class="grid-info">
-      <div class="campo"><label for="edTitulo">Título</label><input id="edTitulo" maxlength="60"></div>
-      <div class="campo"><label for="edColor">Categoría (color)</label>
-        <select id="edColor">
-          <option value="c-verde">🟢 Contexto escolar</option>
-          <option value="c-azul">🔵 Gestión educativa</option>
-          <option value="c-amarillo">🟡 Organización</option>
-          <option value="c-naranja">🟠 Enseñanza</option>
-          <option value="c-morado">🟣 Informática</option>
-          <option value="c-rojo">🔴 Reflexión teórica</option>
-          <option value="c-salida">⚫ Salida / Llegada</option>
-        </select>
-      </div>
-      <div class="campo"><label for="edIcono">Icono (emoji)</label><input id="edIcono" maxlength="4"></div>
-      <div class="campo"><label for="edTipo">Tipo</label>
-        <select id="edTipo">
-          <option value="pregunta">Pregunta</option>
-          <option value="inicio">Inicio</option>
-          <option value="avanza">Avanza</option>
-          <option value="retrocede">Retrocede</option>
-          <option value="final">Final</option>
-        </select>
-      </div>
-      <div class="campo" id="edCantidadCampo"><label for="edCantidad">Cantidad (avanza/retrocede)</label><input id="edCantidad" type="number" min="1" max="5" value="1"></div>
-    </div>
-    <div class="campo"><label for="edTexto">Texto / consigna</label><textarea id="edTexto"></textarea></div>
-    <div class="campo"><label for="edOrientacion">Orientación (opcional)</label><textarea id="edOrientacion"></textarea></div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-      <button class="btn btn-dado" id="btnGuardarTarjeta">💾 Guardar tarjeta</button>
-      <button class="btn btn-secundario" id="btnCancelarTarjeta">Cancelar</button>
-    </div>
+<section id="reflexion">
+  <div class="reflection"><span class="kicker">05 · Mi voz como futuro docente</span><h2>La persona antes que la etiqueta.</h2>
+  <p>Desde mi futuro rol docente, me gustaría ser un profesor que sepa escuchar y comprender a sus alumnos cuando tengan alguna dificultad en la escuela. Entiendo que no todos aprenden de la misma manera ni al mismo ritmo, porque cada alumno es diferente y tiene su propia historia.</p>
+  <p>Para mí, ser docente no es solamente explicar un tema o dar una actividad, sino también tener paciencia, escuchar y tratar de entender lo que les pasa a los alumnos. A veces, un estudiante puede tener dificultades para aprender, y creo que es importante no juzgarlo sin saber por lo que está pasando.</p>
+  <p>Me gustaría que mis alumnos tengan la confianza de preguntar cuando no entiendan algo, que puedan equivocarse sin sentir vergüenza y que sepan que siempre pueden volver a intentarlo. Porque cometer errores es parte del aprendizaje y todos necesitamos que alguien nos dé una oportunidad.</p>
+  <p>Sé que todavía me queda mucho por aprender en este camino, pero quiero ser un docente que no se quede solamente con las notas o los resultados, sino que también valore el esfuerzo de cada alumno y lo acompañe en sus dificultades.</p>
+  <p><strong>Para mí, enseñar es mucho más que transmitir conocimientos. Es aprender a ponerse en el lugar del otro, comprender que cada alumno tiene su propio camino y ayudarlo a seguir adelante, incluso cuando las cosas se ponen difíciles.</strong></p>
   </div>
 </section>
-<footer class="pie">Recorriendo el Aula · Proyecto pedagógico interactivo · Colegio Galileo Galilei N.º 3169</footer>
-</div>
-
-<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-content"><button class="close-btn" id="closeBtn" aria-label="Cerrar ventana">&times;</button><h3 class="modal-title" id="modalTitle">Desafío pedagógico</h3><p class="modal-text" id="modalText"></p><div class="campo"><label for="respuestaJugador">Tu reflexión o respuesta (opcional)</label><textarea id="respuestaJugador" placeholder="Escribí una idea, argumento o propuesta..."></textarea></div><div class="estrellas-selector" id="estrellasSelector"><div class="estrellas-botones" role="radiogroup" aria-label="Nivel de la respuesta"><button type="button" class="estrella-btn" data-valor="1" aria-label="Respuesta mínima">⭐</button><button type="button" class="estrella-btn activa" data-valor="2" aria-label="Respuesta correcta">⭐</button><button type="button" class="estrella-btn activa" data-valor="3" aria-label="Respuesta fundamentada">⭐</button></div><span class="estrellas-label" id="estrellasLabel">⭐⭐ Correcta</span></div><div class="respuesta-orientativa" id="respuestaOrientativa"></div><div class="modal-actions"><button class="btn btn-secundario" id="btnOrientacion">💡 Ver orientación</button><button class="btn btn-dado" id="btnResolver">Registrar desafío</button><button class="btn btn-secundario" id="btnCerrarModal">Cerrar</button></div></div>
-</div>
+</main>
+<footer><p>Reflexión sobre el rol docente a partir del texto <em>“¿En qué nos fijamos cuando miramos a nuestros alumnos?”</em></p><p class="small">Una propuesta para pensar, participar y construir una mirada educativa más humana.</p></footer>
 <script>
-"use strict";
-
-/* ============================================================
-   1. DATOS
-   ============================================================ */
-const DATOS_ORIGINALES = [
-{titulo:"Salida",texto:"¡Comienza el recorrido! Pensá qué esperás aprender del trabajo de campo.",color:"c-salida",icono:"🚩",tipo:"inicio"},
-{titulo:"Contexto escolar (PEI)",texto:"¿Qué información del PEI permite comprender las prioridades de la institución? Mencioná qué documento consultarías.",color:"c-verde",icono:"🌍",tipo:"pregunta",orientacion:"Identificá objetivos institucionales y contrastalos con documentos y observaciones reales."},
-{titulo:"Observaste",texto:"Describí un detalle observable de una situación escolar sin confundirlo con una interpretación.",color:"c-naranja",icono:"👁️",tipo:"pregunta",orientacion:"Separá lo que viste o escuchaste de la explicación que elaborás después."},
-{titulo:"Gestión educativa",texto:"¿Qué estrategia puede mejorar la comunicación entre el equipo directivo y los docentes?",color:"c-azul",icono:"🏛️",tipo:"pregunta",orientacion:"Considerá espacios de reunión, acuerdos claros, canales de comunicación y seguimiento."},
-{titulo:"Pensaste: reflexión",texto:"¿Cómo podrían influir las condiciones sociales en las trayectorias escolares? Fundamentá sin generalizar.",color:"c-rojo",icono:"🧠",tipo:"pregunta",orientacion:"Relacioná condiciones, apoyos institucionales y experiencias concretas; evitá atribuir causas sin evidencia."},
-{titulo:"Organización escolar",texto:"¿Cómo influye la distribución de los tiempos y espacios en las experiencias de aprendizaje?",color:"c-amarillo",icono:"⚙️",tipo:"pregunta",orientacion:"Analizá horarios, espacios disponibles, accesibilidad y necesidades de los grupos."},
-{titulo:"Informática educativa",texto:"¿Cómo se podría utilizar una herramienta digital para promover el aprendizaje colaborativo?",color:"c-morado",icono:"💻",tipo:"pregunta",orientacion:"Proponé una herramienta, una actividad concreta y cómo participarían los estudiantes."},
-{titulo:"¡Avanzá!",texto:"¡Momento de avanzar! Avanzá 2 casilleros. La aplicación actualizará tu posición automáticamente.",color:"c-salida",icono:"⬆️",tipo:"avanza",cantidad:2},
-{titulo:"Trabajo docente",texto:"¿Qué posibilidades de formación continua pueden ayudar a responder a nuevas necesidades del aula?",color:"c-naranja",icono:"📖",tipo:"pregunta",orientacion:"Pensá en formación situada, intercambio entre colegas y revisión de prácticas."},
-{titulo:"Contexto y comunidad",texto:"¿Cómo investigarías la relación entre la comunidad y la institución escolar?",color:"c-verde",icono:"🌍",tipo:"pregunta",orientacion:"Triangulá entrevistas, documentos y observaciones; distinguí datos confirmados de hipótesis."},
-{titulo:"Retrocedé",texto:"Volvé un paso para revisar tu argumento: retrocedé 1 casillero y relacioná tu idea con una fuente.",color:"c-rojo",icono:"⬇️",tipo:"retrocede",cantidad:1},
-{titulo:"Comunicación institucional",texto:"¿Qué condiciones hacen que la comunicación institucional sea clara y participativa?",color:"c-azul",icono:"🏛️",tipo:"pregunta",orientacion:"Considerá canales accesibles, escucha, acuerdos y devolución."},
-{titulo:"Currículum y PCI",texto:"¿Cómo puede un proyecto interdisciplinario conectar distintas áreas de conocimiento?",color:"c-amarillo",icono:"📚",tipo:"pregunta",orientacion:"Proponé un problema común y explicá qué aporta cada área."},
-{titulo:"Preguntaste",texto:"Formulá una pregunta abierta que ayude a comprender una situación escolar compleja.",color:"c-naranja",icono:"💬",tipo:"pregunta",orientacion:"Evitá preguntas que se respondan solo con sí o no; preguntá por experiencias, razones o condiciones."},
-{titulo:"Reflexión teórica",texto:"Elegí un concepto pedagógico estudiado y explicá cómo ayuda a interpretar una situación observada.",color:"c-rojo",icono:"🧠",tipo:"pregunta",orientacion:"Definí el concepto, vinculalo con evidencia concreta y señalá también sus límites."},
-{titulo:"¡Avanzá!",texto:"Avanzá 1 casillero y explicá qué evidencia sostiene tu interpretación.",color:"c-salida",icono:"⬆️",tipo:"avanza",cantidad:1},
-{titulo:"Ciudadanía digital",texto:"¿Qué acuerdos son necesarios para usar recursos digitales de forma responsable en el aula?",color:"c-morado",icono:"💻",tipo:"pregunta",orientacion:"Incluí privacidad, fuentes confiables, respeto y cuidado de datos personales."},
-{titulo:"Comunidad educativa",texto:"¿Cómo pueden incorporarse las voces de estudiantes y familias al análisis institucional?",color:"c-verde",icono:"🌍",tipo:"pregunta",orientacion:"Considerá métodos de consulta respetuosos y diversos, sin asumir que una voz representa a todas."},
-{titulo:"Gestión y convivencia",texto:"¿Qué intervención podría favorecer la convivencia escolar ante un conflicto?",color:"c-azul",icono:"🤝",tipo:"pregunta",orientacion:"Proponé acciones de escucha, cuidado, acuerdos y seguimiento, respetando los protocolos institucionales."},
-{titulo:"Pregunta abierta",texto:"¿De qué manera las condiciones edilicias pueden incidir en la enseñanza y el aprendizaje?",color:"c-rojo",icono:"❓",tipo:"pregunta",orientacion:"Pensá en iluminación, ruido, accesibilidad, mobiliario y disponibilidad de espacios; verificá las condiciones observadas."},
-{titulo:"Organización de recursos",texto:"¿Cómo se podría promover un uso más frecuente y equitativo de los recursos de la biblioteca escolar?",color:"c-amarillo",icono:"📚",tipo:"pregunta",orientacion:"Proponé acciones realistas y explicá cómo evaluarías si funcionan."},
-{titulo:"Retrocedé",texto:"Retrocedé 1 casillero para revisar si tu conclusión distingue datos, interpretación y evidencia.",color:"c-rojo",icono:"⬇️",tipo:"retrocede",cantidad:1},
-{titulo:"Trayectorias educativas",texto:"¿Qué apoyos institucionales podrían acompañar a estudiantes con trayectorias discontinuas?",color:"c-naranja",icono:"🧭",tipo:"pregunta",orientacion:"Considerá acompañamiento, flexibilidad pedagógica y trabajo en red sin estigmatizar."},
-{titulo:"Decidís: intervención",texto:"Proponé una intervención educativa concreta, fundamentada y posible de evaluar.",color:"c-rojo",icono:"📝",tipo:"pregunta",orientacion:"Definí objetivo, acción, participantes, recursos y una señal para valorar los resultados."},
-{titulo:"Llegada",texto:"¡Llegaste al final! Compartí qué aprendiste y qué pregunta sigue abierta. Completá el cierre grupal 3-2-1.",color:"c-salida",icono:"🏁",tipo:"final"}
-];
-
-const TARJETAS_KEY = "recorriendoAulaTarjetas";
-const COLS = 5;
-const coloresFichas = ["#147d92","#c04f48","#4d8b57","#875b9a","#d1842e","#334b8e"];
-const MAPA_COLORES = {"c-verde":"var(--verde)","c-azul":"var(--azul)","c-amarillo":"var(--amarillo)","c-naranja":"var(--naranja)","c-morado":"var(--violeta)","c-rojo":"var(--rojo)","c-salida":"var(--primario)"};
-
-function cargarTarjetasGuardadas(){
-  try {
-    const raw = localStorage.getItem(TARJETAS_KEY);
-    if(!raw) return null;
-    const arr = JSON.parse(raw);
-    if(Array.isArray(arr) && arr.length >= 2) return arr;
-  } catch(e){}
-  return null;
-}
-function guardarTarjetasEnStorage(){
-  try { localStorage.setItem(TARJETAS_KEY, JSON.stringify(datosCasilleros)); } catch(e){}
-}
-function totalCasillas(){ return datosCasilleros.length; }
-function ultimaCasilla(){ return datosCasilleros.length - 1; }
-
-/* ============================================================
-   2. ESTADO
-   ============================================================ */
-let datosCasilleros = cargarTarjetasGuardadas() || JSON.parse(JSON.stringify(DATOS_ORIGINALES));
-const $ = id => document.getElementById(id);
-const tablero = $("tablero"), btnDado = $("btnDado"), btnContinuar = $("btnContinuar"), modal = $("modalOverlay");
-let jugadores = [], indiceTurno = 0, pendiente = null, partidaTerminada = false, desafiosTotales = 0;
-let estrellasSeleccionadas = 2;
-let editorEditandoIdx = -1;
-let animando = false;
-
-/* ============================================================
-   3. FÁBRICA DE JUGADORES Y CONFIGURACIÓN
-   ============================================================ */
-function crearJugadores(cantidad,nombres){
-  return Array.from({length:cantidad},(_,i)=>({
-    nombre:(nombres[i]||`Jugador ${i+1}`).trim().slice(0,50),
-    color:coloresFichas[i % coloresFichas.length],
-    posicion:0,puntos:0,resueltos:0,desafios:[]
-  }));
-}
-
-function leerNombres(){
-  return $("nombresJugadores").value
-    .split(/[\r\n]+/)
-    .map(s=>s.trim())
-    .filter(Boolean);
-}
-
-function actualizarHintJugadores(){
-  const individual = $("modoJuego").value === "individual";
-  const nombres = leerNombres();
-  let hint = "";
-  if(individual){
-    hint = nombres.length > 0
-      ? `Modo individual: se usará "${nombres[0]}".`
-      : "Modo individual: se usará un nombre por defecto.";
-  } else if(nombres.length === 0){
-    const cnt = Number($("cantidadJugadores").value);
-    hint = `Sin nombres cargados: se crearán ${cnt} jugadores con nombres por defecto.`;
-  } else if(nombres.length === 1){
-    const cnt = Number($("cantidadJugadores").value);
-    hint = `Solo hay 1 nombre: se crearán ${cnt} jugadores (el resto con nombre por defecto). Agregá otro nombre en una nueva línea para tener más.`;
-  } else if(nombres.length > 6){
-    hint = `Hay ${nombres.length} nombres: se usarán los primeros 6.`;
-  } else {
-    hint = `✓ Se crearán ${nombres.length} jugadores.`;
-  }
-  $("jugadoresHint").textContent = hint;
-}
-
-function configurarPartida(){
-  const individual = $("modoJuego").value === "individual";
-  let nombres = leerNombres();
-  let cantidad;
-
-  if(individual){
-    cantidad = 1;
-    nombres = nombres.slice(0, 1);
-  } else if(nombres.length >= 2){
-    cantidad = Math.min(6, nombres.length);
-    nombres = nombres.slice(0, cantidad);
-  } else {
-    cantidad = Number($("cantidadJugadores").value) || 2;
-  }
-
-  jugadores = crearJugadores(cantidad, nombres);
-  indiceTurno = 0; pendiente = null; partidaTerminada = false; desafiosTotales = 0; animando = false;
-  $("btnDado").disabled = false;
-  $("btnDado").textContent = "🎲 Tirar dado";
-  btnContinuar.disabled = true;
-  $("contador").textContent = "1";
-  $("totalCasilleros").textContent = totalCasillas();
-  $("turnoTexto").textContent = jugadores[0].nombre;
-  renderTablero(); renderJugadores(); actualizarResumen();
-  $("estadoJuego").textContent = `Partida lista con ${jugadores.length} jugador(es). Lanzá el dado para avanzar.`;
-}
-
-/* ============================================================
-   4. GEOMETRÍA DEL TABLERO CURVO
-   ============================================================ */
-function calcularCoords(index, total){
-  const rows = Math.ceil(total / COLS);
-  const row = Math.floor(index / COLS);
-  const colInRow = index % COLS;
-  const col = row % 2 === 0 ? colInRow : (COLS - 1 - colInRow);
-  const x = ((col + 0.5) / COLS) * 100;
-  const y = ((row + 0.5) / rows) * 100;
-  return { x, y };
-}
-
-function generarCaminoSuave(points){
-  if(points.length < 2) return "";
-  let d = `M ${points[0].x} ${points[0].y}`;
-  for(let i = 0; i < points.length - 1; i++){
-    const p0 = points[i === 0 ? 0 : i - 1];
-    const p1 = points[i];
-    const p2 = points[i + 1];
-    const p3 = points[i + 2] || p2;
-    const cp1x = p1.x + (p2.x - p0.x) / 6;
-    const cp1y = p1.y + (p2.y - p0.y) / 6;
-    const cp2x = p2.x - (p3.x - p1.x) / 6;
-    const cp2y = p2.y - (p3.y - p1.y) / 6;
-    d += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
-  }
-  return d;
-}
-
-const SVG_NS = "http://www.w3.org/2000/svg";
-
-/* ============================================================
-   5. RENDER DEL TABLERO
-   ============================================================ */
-function renderTablero(){
-  tablero.replaceChildren();
-
-  const total = datosCasilleros.length;
-  const rows = Math.ceil(total / COLS);
-  tablero.style.aspectRatio = `${COLS} / ${rows}`;
-  tablero.style.setProperty("--cols", COLS);
-  tablero.style.setProperty("--rows", rows);
-
-  const coords = [];
-  for(let i = 0; i < total; i++) coords.push(calcularCoords(i, total));
-
-  // SVG del camino
-  const svg = document.createElementNS(SVG_NS, "svg");
-  svg.setAttribute("class", "camino-svg");
-  svg.setAttribute("viewBox", "0 0 100 100");
-  svg.setAttribute("preserveAspectRatio", "none");
-  const d = generarCaminoSuave(coords);
-
-  // Sombra del camino (track ancho)
-  const pathBg = document.createElementNS(SVG_NS, "path");
-  pathBg.setAttribute("d", d);
-  pathBg.setAttribute("fill", "none");
-  pathBg.setAttribute("stroke", "#c9d6dc");
-  pathBg.setAttribute("stroke-width", "20");
-  pathBg.setAttribute("stroke-linecap", "round");
-  pathBg.setAttribute("stroke-linejoin", "round");
-  pathBg.setAttribute("vector-effect", "non-scaling-stroke");
-  svg.appendChild(pathBg);
-
-  // Línea central (más fina, más oscura)
-  const pathLine = document.createElementNS(SVG_NS, "path");
-  pathLine.setAttribute("d", d);
-  pathLine.setAttribute("fill", "none");
-  pathLine.setAttribute("stroke", "#a3b6be");
-  pathLine.setAttribute("stroke-width", "3");
-  pathLine.setAttribute("stroke-linecap", "round");
-  pathLine.setAttribute("stroke-linejoin", "round");
-  pathLine.setAttribute("stroke-dasharray", "6 8");
-  pathLine.setAttribute("vector-effect", "non-scaling-stroke");
-  svg.appendChild(pathLine);
-
-  tablero.appendChild(svg);
-
-  // Casillas circulares
-  datosCasilleros.forEach((dato, i) => {
-    const pos = coords[i];
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = `casilla-c ${dato.color}`;
-    b.dataset.index = i;
-    b.style.left = pos.x + "%";
-    b.style.top = pos.y + "%";
-    b.setAttribute("aria-label", `Casillero ${i+1}: ${dato.titulo}`);
-
-    const n = document.createElement("span"); n.className="numero"; n.textContent = i+1;
-    const ic = document.createElement("span"); ic.className="icono"; ic.textContent = dato.icono || "•";
-    const et = document.createElement("span"); et.className="etiqueta"; et.textContent = dato.titulo;
-    const fichas = document.createElement("span"); fichas.className="fichas";
-
-    jugadores.forEach((j, idx) => {
-      if(j.posicion === i){
-        const f = document.createElement("i");
-        f.className = "ficha";
-        f.dataset.jugador = idx;
-        f.style.background = j.color;
-        f.title = j.nombre;
-        fichas.append(f);
-      }
-    });
-
-    b.append(n, ic, et, fichas);
-
-    if(jugadores.some(j => j.posicion === i)) b.classList.add("actual");
-
-    b.addEventListener("click", () => {
-      if(pendiente && pendiente.casilla === i && !pendiente.resuelto){
-        mostrarModal(datosCasilleros[i], pendiente.jugadorIndex, i);
-        return;
-      }
-      if(pendiente) $("estadoJuego").textContent = "Tenés un desafío pendiente. Resolvelo o hacé clic en tu casilla para retomarlo.";
-      else $("estadoJuego").textContent = "Las casillas no se eligen manualmente: usá el dado para mover la ficha.";
-    });
-
-    tablero.appendChild(b);
-  });
-}
-
-function renderJugadores(){
-  const p = $("jugadoresPanel");
-  p.replaceChildren();
-  jugadores.forEach((j, i) => {
-    const card = document.createElement("div");
-    card.className = "jugador-card" + (i === indiceTurno && !partidaTerminada ? " turno" : "");
-    const name = document.createElement("div"); name.className="jugador-nombre";
-    const dot = document.createElement("i"); dot.className="punto-ficha"; dot.style.background = j.color;
-    const t = document.createElement("span"); t.textContent = j.nombre;
-    name.append(dot, t);
-    const meta = document.createElement("div"); meta.className="jugador-meta";
-    meta.textContent = `Casillero ${j.posicion+1}/${totalCasillas()} · ${j.puntos} puntos · ${j.resueltos} desafíos`;
-    card.append(name, meta);
-    p.append(card);
-  });
-  $("turnoTexto").textContent = partidaTerminada ? "Finalizado" : (jugadores[indiceTurno]?.nombre || "—");
-  $("contador").textContent = jugadores[indiceTurno] ? jugadores[indiceTurno].posicion+1 : 1;
-  $("totalCasilleros").textContent = totalCasillas();
-}
-
-function actualizarResumen(){
-  $("resumenPartida").textContent = `Participantes: ${jugadores.length}. Desafíos registrados: ${desafiosTotales}. Puntos totales: ${jugadores.reduce((s,j)=>s+j.puntos,0)}.`;
-}
-
-/* ============================================================
-   6. MOVIMIENTO PASO A PASO
-   ============================================================ */
-function moverFichaPaso(jugador, dePos, aPos){
-  const idx = jugadores.indexOf(jugador);
-  if(idx < 0) return;
-
-  const casillaDe = tablero.querySelector(`.casilla-c[data-index="${dePos}"] .fichas`);
-  const casillaA = tablero.querySelector(`.casilla-c[data-index="${aPos}"] .fichas`);
-  if(!casillaDe || !casillaA){ renderTablero(); return; }
-
-  const ficha = casillaDe.querySelector(`.ficha[data-jugador="${idx}"]`);
-  if(ficha) casillaA.appendChild(ficha);
-  else renderTablero();
-
-  // Recalcular .actual para todos
-  tablero.querySelectorAll(".casilla-c").forEach(el => el.classList.remove("actual"));
-  jugadores.forEach(j => {
-    const c = tablero.querySelector(`.casilla-c[data-index="${j.posicion}"]`);
-    if(c) c.classList.add("actual");
-  });
-
-  // Destacar casilla pisada
-  const nueva = tablero.querySelector(`.casilla-c[data-index="${aPos}"]`);
-  if(nueva){
-    nueva.classList.add("pisando");
-    setTimeout(() => nueva.classList.remove("pisando"), 420);
-  }
-}
-
-async function animarMovimiento(jugador, desde, hasta){
-  if(desde === hasta) return;
-  const paso = hasta > desde ? 1 : -1;
-  for(let pos = desde + paso; paso > 0 ? pos <= hasta : pos >= hasta; pos += paso){
-    jugador.posicion = pos;
-    moverFichaPaso(jugador, pos - paso, pos);
-    renderJugadores();
-    await new Promise(r => setTimeout(r, 220));
-  }
-}
-
-/* ============================================================
-   7. MODAL + ESTRELLAS
-   ============================================================ */
-function setEstrellas(n){
-  estrellasSeleccionadas = n;
-  document.querySelectorAll(".estrella-btn").forEach(b=>{
-    const v = Number(b.dataset.valor);
-    b.classList.toggle("activa", v <= n);
-  });
-  const labels = { 1:"⭐ Mínima", 2:"⭐⭐ Correcta", 3:"⭐⭐⭐ Fundamentada" };
-  $("estrellasLabel").textContent = labels[n] || "";
-}
-
-function mostrarModal(dato, jugadorIndex, casilla){
-  pendiente = {dato, jugadorIndex, casilla, resuelto:false};
-  $("modalTitle").textContent = `${dato.icono || ""} ${dato.titulo}`;
-  $("modalText").textContent = dato.texto;
-  $("respuestaJugador").value = "";
-  $("respuestaOrientativa").textContent = dato.orientacion || "Este casillero marca el inicio o el cierre del recorrido.";
-  $("respuestaOrientativa").classList.remove("visible");
-  $("btnOrientacion").textContent = "💡 Ver orientación";
-  setEstrellas(2);
-  const selector = $("estrellasSelector");
-  selector.style.display = (dato.tipo==="inicio" || dato.tipo==="final") ? "none" : "";
-  modal.classList.add("active");
-  $("btnResolver").focus();
-}
-
-function cerrarModal(){
-  modal.classList.remove("active");
-  if(pendiente && !pendiente.resuelto){
-    $("estadoJuego").textContent = "Desafío pendiente: hacé clic en tu casilla para retomarlo.";
-    const j = jugadores[indiceTurno];
-    if(j){
-      const el = tablero.querySelector(`.casilla-c[data-index="${j.posicion}"]`);
-      if(el) el.focus();
-    }
-  }
-}
-
-/* ============================================================
-   8. FLUJO DE JUEGO
-   ============================================================ */
-async function lanzarDado(){
-  if(!jugadores.length || pendiente || partidaTerminada || animando) return;
-  btnDado.disabled = true;
-  btnContinuar.disabled = true;
-  animando = true;
-
-  // Animación del dado
-  let vueltas = 0;
-  btnDado.textContent = "🎲 ...";
-  await new Promise(resolve => {
-    const interval = setInterval(() => {
-      btnDado.textContent = `🎲 ${Math.floor(Math.random()*6)+1}`;
-      if(++vueltas >= 10){ clearInterval(interval); resolve(); }
-    }, 75);
-  });
-
-  const dado = Math.floor(Math.random()*6)+1;
-  const j = jugadores[indiceTurno];
-  const antes = j.posicion;
-  const destino = Math.min(ultimaCasilla(), antes + dado);
-
-  btnDado.textContent = `🎲 Salió ${dado}`;
-  $("estadoJuego").textContent = `${j.nombre} obtuvo ${dado}. Avanzando del casillero ${antes+1} al ${destino+1}...`;
-
-  await animarMovimiento(j, antes, destino);
-
-  if(destino === ultimaCasilla()) partidaTerminada = true;
-  $("estadoJuego").textContent = `${j.nombre} llegó al casillero ${destino+1}.`;
-  animando = false;
-
-  mostrarModal(datosCasilleros[destino], indiceTurno, destino);
-}
-
-async function registrarDesafio(){
-  if(!pendiente || pendiente.resuelto || animando) return;
-  const {dato, jugadorIndex, casilla} = pendiente;
-  const j = jugadores[jugadorIndex];
-  pendiente.resuelto = true;
-
-  const respuesta = $("respuestaJugador").value.trim();
-  let puntos = (dato.tipo==="pregunta") ? estrellasSeleccionadas : (respuesta ? 3 : 2);
-
-  if(!j.desafios.includes(casilla)){
-    j.desafios.push(casilla);
-    j.puntos += puntos;
-    j.resueltos++;
-    desafiosTotales++;
-    j.respuestaUltima = respuesta;
-    j.estrellasUltima = estrellasSeleccionadas;
-  }
-
-  modal.classList.remove("active");
-  pendiente = null;
-  actualizarResumen();
-  renderJugadores();
-
-  // Movimiento especial (avanza/retrocede) con animación
-  if(dato.tipo === "avanza" || dato.tipo === "retrocede"){
-    animando = true;
-    const delta = (dato.tipo === "avanza" ? 1 : -1) * (dato.cantidad || 1);
-    const nueva = Math.max(0, Math.min(ultimaCasilla(), j.posicion + delta));
-    $("estadoJuego").textContent = `Regla especial: ${dato.titulo}. Moviendo ficha...`;
-    await animarMovimiento(j, j.posicion, nueva);
-    if(nueva === ultimaCasilla()) partidaTerminada = true;
-    $("estadoJuego").textContent = `Regla especial: ${dato.titulo}. ${j.nombre} queda en el casillero ${nueva+1}.`;
-    animando = false;
-  }
-
-  renderJugadores();
-
-  if(partidaTerminada){
-    btnDado.disabled = true;
-    btnContinuar.disabled = true;
-    $("estadoJuego").textContent += ` ¡Recorrido completado por ${j.nombre}! Completá la reflexión 3-2-1.`;
-  } else {
-    btnContinuar.disabled = false;
-    $("estadoJuego").textContent += ` Desafío registrado: ${puntos} puntos. Presioná «Continuar turno».`;
-  }
-}
-
-function siguienteTurno(){
-  if(pendiente || animando) return;
-  indiceTurno = (indiceTurno+1) % jugadores.length;
-  btnContinuar.disabled = true;
-  btnDado.disabled = partidaTerminada;
-  btnDado.textContent = "🎲 Tirar dado";
-  renderJugadores(); renderTablero();
-  $("estadoJuego").textContent = partidaTerminada
-    ? "Partida finalizada."
-    : "Turno de " + jugadores[indiceTurno].nombre + ". Lanzá el dado.";
-}
-
-/* ============================================================
-   9. PERSISTENCIA DE PARTIDA Y CIERRE
-   ============================================================ */
-function guardarPartida(){
-  const estado = {
-    version:1, jugadores, indiceTurno, partidaTerminada, desafiosTotales,
-    cierre: {
-      ideas:$("ideas").value,
-      situaciones:$("situaciones").value,
-      pregunta:$("preguntaFinal").value,
-      observaciones:$("observaciones").value
-    }
-  };
-  try {
-    localStorage.setItem("recorriendoAulaPartida", JSON.stringify(estado));
-    $("estadoJuego").textContent = "Partida guardada en este navegador.";
-  } catch(e){
-    $("estadoJuego").textContent = "No se pudo guardar la partida en este navegador.";
-  }
-}
-
-function cargarPartida(){
-  try {
-    const raw = localStorage.getItem("recorriendoAulaPartida");
-    if(!raw){ $("estadoJuego").textContent = "No hay una partida guardada en este navegador."; return; }
-    const e = JSON.parse(raw);
-    if(e.version!==1 || !Array.isArray(e.jugadores) || !e.jugadores.length || e.jugadores.length>6) throw Error("Datos no válidos");
-    if(e.jugadores.some(j=>
-      typeof j.nombre!=="string" ||
-      !Number.isInteger(j.posicion) ||
-      j.posicion<0 || j.posicion>=totalCasillas() ||
-      typeof j.puntos!=="number" ||
-      typeof j.resueltos!=="number" ||
-      !Array.isArray(j.desafios)
-    )) throw Error("Datos no válidos");
-    jugadores = e.jugadores;
-    indiceTurno = Math.max(0, Math.min(jugadores.length-1, e.indiceTurno||0));
-    partidaTerminada = !!e.partidaTerminada;
-    desafiosTotales = Number(e.desafiosTotales) || 0;
-    pendiente = null; animando = false;
-    btnDado.disabled = partidaTerminada;
-    btnDado.textContent = "🎲 Tirar dado";
-    btnContinuar.disabled = true;
-    $("ideas").value = e.cierre?.ideas || "";
-    $("situaciones").value = e.cierre?.situaciones || "";
-    $("preguntaFinal").value = e.cierre?.pregunta || "";
-    $("observaciones").value = e.cierre?.observaciones || "";
-    renderTablero(); renderJugadores(); actualizarResumen();
-    $("estadoJuego").textContent = "Partida recuperada correctamente desde este navegador.";
-  } catch(err){
-    $("estadoJuego").textContent = "La partida guardada está dañada o incompleta. Iniciá una nueva partida.";
-  }
-}
-
-function guardarCierre(){
-  try {
-    const cierre = {
-      ideas:$("ideas").value,
-      situaciones:$("situaciones").value,
-      pregunta:$("preguntaFinal").value,
-      observaciones:$("observaciones").value
-    };
-    localStorage.setItem("recorriendoAulaCierre", JSON.stringify(cierre));
-    $("estadoCierre").textContent = "Reflexión guardada en este navegador.";
-  } catch(e){
-    $("estadoCierre").textContent = "No se pudo guardar la reflexión.";
-  }
-}
-
-function imprimirSintesis(){
-  const resumen = [
-    "RECORRIENDO EL AULA — CIERRE 3-2-1",
-    "Participantes: " + jugadores.map(j=>j.nombre).join(", "),
-    "Desafíos registrados: " + desafiosTotales,
-    "Puntos: " + jugadores.map(j=>`${j.nombre}: ${j.puntos}`).join(" | "),
-    "",
-    "3 IDEAS CLAVE", $("ideas").value,
-    "",
-    "2 SITUACIONES", $("situaciones").value,
-    "",
-    "1 PREGUNTA ABIERTA", $("preguntaFinal").value,
-    "",
-    "OBSERVACIONES DOCENTES", $("observaciones").value
-  ].join("\n");
-  const w = window.open("","_blank");
-  if(!w){
-    $("estadoCierre").textContent = "El navegador bloqueó la ventana. Permití ventanas emergentes.";
-    return;
-  }
-  w.document.write("<!doctype html><html lang='es'><meta charset='utf-8'><title>Síntesis 3-2-1</title><body style='font:16px/1.6 system-ui;max-width:800px;margin:40px auto;white-space:pre-wrap'></body></html>");
-  w.document.body.textContent = resumen;
-  w.document.close();
-  w.focus();
-  w.print();
-}
-
-/* ============================================================
-   10. EDITOR DE TARJETAS
-   ============================================================ */
-function renderEditor(){
-  const lista = $("editorLista");
-  lista.replaceChildren();
-  datosCasilleros.forEach((dato, i) => {
-    const item = document.createElement("div");
-    item.className = "editor-item";
-    const num = document.createElement("span"); num.className="ed-num"; num.textContent = i+1;
-    const swatch = document.createElement("span"); swatch.className="ed-swatch"; swatch.style.background = MAPA_COLORES[dato.color] || "#ccc";
-    const info = document.createElement("div"); info.className="ed-info";
-    const strong = document.createElement("strong");
-    strong.textContent = `${dato.icono || ""} ${dato.titulo}`;
-    const tipoBadge = document.createElement("span"); tipoBadge.className="badge-tipo"; tipoBadge.textContent = dato.tipo;
-    strong.append(tipoBadge);
-    const small = document.createElement("small");
-    small.textContent = dato.texto.length > 100 ? dato.texto.slice(0,100)+"…" : dato.texto;
-    info.append(strong, small);
-
-    const acciones = document.createElement("div"); acciones.className="ed-acciones";
-    const btnEditar = document.createElement("button");
-    btnEditar.textContent = "✏️ Editar";
-    btnEditar.addEventListener("click", () => abrirFormularioEditor(i));
-    const btnEliminar = document.createElement("button");
-    btnEliminar.textContent = "🗑️";
-    btnEliminar.className = "del";
-    btnEliminar.title = "Eliminar casillero";
-    btnEliminar.addEventListener("click", () => eliminarCasillero(i));
-    acciones.append(btnEditar, btnEliminar);
-
-    item.append(num, swatch, info, acciones);
-    lista.append(item);
-  });
-}
-
-function actualizarVisibilidadCantidad(){
-  const tipo = $("edTipo").value;
-  $("edCantidadCampo").style.display = (tipo==="avanza" || tipo==="retrocede") ? "" : "none";
-}
-
-function abrirFormularioEditor(idx){
-  editorEditandoIdx = idx;
-  const dato = idx>=0 ? datosCasilleros[idx]
-    : {titulo:"Nueva tarjeta", texto:"", color:"c-verde", icono:"❓", tipo:"pregunta", orientacion:"", cantidad:1};
-  $("editorFormTitulo").textContent = idx>=0 ? `Editar casillero ${idx+1}` : "Nueva tarjeta";
-  $("edTitulo").value = dato.titulo;
-  $("edTexto").value = dato.texto;
-  $("edColor").value = dato.color || "c-verde";
-  $("edIcono").value = dato.icono || "❓";
-  $("edTipo").value = dato.tipo || "pregunta";
-  $("edOrientacion").value = dato.orientacion || "";
-  $("edCantidad").value = dato.cantidad || 1;
-  actualizarVisibilidadCantidad();
-  $("editorFormPanel").style.display = "";
-  $("editorFormPanel").scrollIntoView({behavior:"smooth", block:"start"});
-  $("edTitulo").focus();
-}
-
-function cerrarFormularioEditor(){
-  editorEditandoIdx = -1;
-  $("editorFormPanel").style.display = "none";
-}
-
-function guardarTarjeta(){
-  const titulo = $("edTitulo").value.trim();
-  if(!titulo){
-    $("editorEstado").textContent = "El título es obligatorio.";
-    return;
-  }
-  const datos = {
-    titulo,
-    texto: $("edTexto").value.trim(),
-    color: $("edColor").value,
-    icono: $("edIcono").value.trim() || "❓",
-    tipo: $("edTipo").value
-  };
-  if(datos.tipo==="avanza" || datos.tipo==="retrocede"){
-    datos.cantidad = Math.max(1, Math.min(5, Number($("edCantidad").value) || 1));
-  }
-  const orientacion = $("edOrientacion").value.trim();
-  if(orientacion) datos.orientacion = orientacion;
-
-  if(editorEditandoIdx >= 0){
-    datosCasilleros[editorEditandoIdx] = datos;
-    $("editorEstado").textContent = `Casillero ${editorEditandoIdx+1} actualizado.`;
-  } else {
-    datosCasilleros.push(datos);
-    $("editorEstado").textContent = `Nueva tarjeta agregada en la posición ${datosCasilleros.length}.`;
-  }
-  guardarTarjetasEnStorage();
-  cerrarFormularioEditor();
-  renderEditor();
-  renderTablero();
-  $("totalCasilleros").textContent = totalCasillas();
-}
-
-function eliminarCasillero(idx){
-  if(datosCasilleros.length <= 2){
-    $("editorEstado").textContent = "El juego debe tener al menos 2 casilleros (salida y llegada).";
-    return;
-  }
-  if(!confirm(`¿Eliminar el casillero ${idx+1} ("${datosCasilleros[idx].titulo}")?`)) return;
-  datosCasilleros.splice(idx, 1);
-  guardarTarjetasEnStorage();
-  jugadores.forEach(j=>{ if(j.posicion >= datosCasilleros.length) j.posicion = datosCasilleros.length-1; });
-  renderEditor(); renderTablero(); renderJugadores();
-  $("totalCasilleros").textContent = totalCasillas();
-  $("editorEstado").textContent = `Casillero eliminado. Ahora hay ${datosCasilleros.length} casilleros.`;
-}
-
-function exportarTarjetas(){
-  const blob = new Blob([JSON.stringify(datosCasilleros, null, 2)], {type:"application/json"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `recorriendo-aula-tarjetas-${new Date().toISOString().slice(0,10)}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
-  $("editorEstado").textContent = "Tarjetas exportadas a JSON.";
-}
-
-function importarTarjetas(file){
-  const reader = new FileReader();
-  reader.onload = (e)=>{
-    try {
-      const arr = JSON.parse(e.target.result);
-      if(!Array.isArray(arr) || arr.length < 2) throw new Error("El archivo debe contener al menos 2 tarjetas.");
-      const validos = arr.every(d => d && typeof d.titulo==="string" && typeof d.texto==="string" && d.color && d.icono && d.tipo);
-      if(!validos) throw new Error("Faltan campos obligatorios en alguna tarjeta.");
-      if(!confirm(`Importar ${arr.length} tarjetas y reemplazar las actuales?`)) return;
-      datosCasilleros = arr;
-      guardarTarjetasEnStorage();
-      jugadores.forEach(j=>{ if(j.posicion >= datosCasilleros.length) j.posicion = datosCasilleros.length-1; });
-      renderEditor(); renderTablero(); renderJugadores();
-      $("totalCasilleros").textContent = totalCasillas();
-      $("editorEstado").textContent = `${arr.length} tarjetas importadas correctamente.`;
-    } catch(err){
-      $("editorEstado").textContent = "Error al importar: " + err.message;
-    }
-  };
-  reader.readAsText(file);
-}
-
-function restaurarTarjetas(){
-  if(!confirm("¿Restaurar las tarjetas originales? Se perderán los cambios no exportados.")) return;
-  datosCasilleros = JSON.parse(JSON.stringify(DATOS_ORIGINALES));
-  guardarTarjetasEnStorage();
-  jugadores.forEach(j=>{ if(j.posicion >= datosCasilleros.length) j.posicion = datosCasilleros.length-1; });
-  renderEditor(); renderTablero(); renderJugadores();
-  $("totalCasilleros").textContent = totalCasillas();
-  $("editorEstado").textContent = "Tarjetas originales restauradas.";
-}
-
-/* ============================================================
-   11. LISTENERS
-   ============================================================ */
-$("btnMenu").addEventListener("click",e=>{
-  e.stopPropagation();
-  const open = $("opcionesMenu").classList.toggle("show");
-  $("btnMenu").setAttribute("aria-expanded", String(open));
-});
-document.addEventListener("click",e=>{
-  if(!$("opcionesMenu").contains(e.target) && e.target!==$("btnMenu")){
-    $("opcionesMenu").classList.remove("show");
-    $("btnMenu").setAttribute("aria-expanded","false");
-  }
-});
-document.querySelectorAll(".btn-menu").forEach(b=>b.addEventListener("click",()=>{
-  document.querySelectorAll(".btn-menu").forEach(x=>x.classList.toggle("activo", x===b));
-  document.querySelectorAll(".seccion-contenido").forEach(s=>s.classList.toggle("activa", s.id===b.dataset.target));
-  const home=document.getElementById("home-dashboard");
-  if(home) home.style.display=(b.dataset.target==="home-dashboard" ? "block" : "none");
-  $("opcionesMenu").classList.remove("show");
-  $("btnMenu").setAttribute("aria-expanded","false");
-}));
-
-
-document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>{
-  const target=b.dataset.go;
-  const menuButton=document.querySelector(`.btn-menu[data-target="${target}"]`);
-  if(menuButton) menuButton.click();
-}));
-
-btnDado.addEventListener("click", lanzarDado);
-btnContinuar.addEventListener("click", siguienteTurno);
-$("btnReiniciar").addEventListener("click",()=>{
-  if(confirm("¿Reiniciar la partida? Se perderá el progreso no guardado.")) configurarPartida();
-});
-$("btnConfigurar").addEventListener("click", configurarPartida);
-$("btnGuardar").addEventListener("click", guardarPartida);
-$("btnCargar").addEventListener("click", cargarPartida);
-
-$("closeBtn").addEventListener("click", cerrarModal);
-$("btnCerrarModal").addEventListener("click", cerrarModal);
-modal.addEventListener("click", e=>{ if(e.target===modal) cerrarModal(); });
-document.addEventListener("keydown", e=>{ if(e.key==="Escape") cerrarModal(); });
-
-$("btnOrientacion").addEventListener("click",()=>{
-  const el = $("respuestaOrientativa");
-  el.classList.toggle("visible");
-  $("btnOrientacion").textContent = el.classList.contains("visible") ? "🙈 Ocultar orientación" : "💡 Ver orientación";
-});
-$("btnResolver").addEventListener("click", registrarDesafio);
-$("btnGuardarCierre").addEventListener("click", guardarCierre);
-$("btnImprimir").addEventListener("click", imprimirSintesis);
-$("irCierre").addEventListener("click",()=>{
-  document.querySelector('[data-target="sec-juego"]').click();
-  $("panelCierre").scrollIntoView({behavior:"smooth", block:"start"});
-});
-
-// Estrellas
-document.querySelectorAll(".estrella-btn").forEach(b=>{
-  b.addEventListener("click", ()=>setEstrellas(Number(b.dataset.valor)));
-});
-
-// Focus trap
-modal.addEventListener("keydown", e=>{
-  if(e.key !== "Tab") return;
-  const f = Array.from(modal.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')).filter(el=>el.offsetParent!==null);
-  if(!f.length) return;
-  const first = f[0], last = f[f.length-1];
-  if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
-  else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
-});
-
-// Hint de jugadores en tiempo real
-$("nombresJugadores").addEventListener("input", actualizarHintJugadores);
-$("modoJuego").addEventListener("change", actualizarHintJugadores);
-$("cantidadJugadores").addEventListener("change", actualizarHintJugadores);
-
-// Editor
-$("btnNuevaTarjeta").addEventListener("click", ()=>abrirFormularioEditor(-1));
-$("btnGuardarTarjeta").addEventListener("click", guardarTarjeta);
-$("btnCancelarTarjeta").addEventListener("click", cerrarFormularioEditor);
-$("edTipo").addEventListener("change", actualizarVisibilidadCantidad);
-$("btnExportar").addEventListener("click", exportarTarjetas);
-$("btnImportarTrigger").addEventListener("click", ()=>$("inputImportar").click());
-$("inputImportar").addEventListener("change", e=>{
-  const f = e.target.files[0];
-  if(f) importarTarjetas(f);
-  e.target.value = "";
-});
-$("btnRestaurar").addEventListener("click", restaurarTarjetas);
-
-/* ============================================================
-   12. ARRANQUE
-   ============================================================ */
-configurarPartida();
-renderEditor();
-actualizarHintJugadores();
-try {
-  const cierre = JSON.parse(localStorage.getItem("recorriendoAulaCierre")||"null");
-  if(cierre){
-    $("ideas").value = cierre.ideas || "";
-    $("situaciones").value = cierre.situaciones || "";
-    $("preguntaFinal").value = cierre.pregunta || "";
-    $("observaciones").value = cierre.observaciones || "";
-  }
-} catch(e){}
+function toggleReveal(id,btn){const el=document.getElementById(id);el.classList.toggle('show');btn.textContent=el.classList.contains('show')?'Cerrar perspectiva −':'Ver otra perspectiva +'}
+function answer(btn,n,correct){const parent=btn.closest('.question');parent.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');const f=document.getElementById('feedback'+n);f.textContent=correct?'¡Bien pensado! Escuchar y comprender permite acompañar sin reducir al estudiante a una etiqueta.':'Probá pensar qué puede haber detrás de esa conducta o dificultad. Una mirada docente busca comprender y acompañar sin dejar de orientar.'}
+function saveReflection(){const value=document.getElementById('commitment').value.trim();const saved=document.getElementById('saved');if(!value){saved.textContent='Primero escribí tu compromiso en el espacio de reflexión.';return}saved.textContent='Tu reflexión quedó escrita en esta página. Para conservarla, imprimí o guardá la página como PDF.'}
+window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('progress').style.width=(max>0?window.scrollY/max*100:0)+'%'});
 </script>
 </body>
 </html>
